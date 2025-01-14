@@ -10,7 +10,7 @@ class BlogController extends Controller
 {
     function index(){
         $search = request()->query('search');
-        $title = "My Blog Title";
+        $title = "Blog Title";
 
         if ($search) {
             // Filter hasil berdasarkan pencarian
@@ -24,5 +24,12 @@ class BlogController extends Controller
         }
 
         return view('blog', compact('title', 'blogs', 'search'));
+    }
+
+
+    public function show(string $id)
+    {
+        $blog = Blogs::findOrFail(id: $id);
+        return view('blogdetail', ['blog' => $blog]);
     }
 }

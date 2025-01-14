@@ -18,7 +18,8 @@
             <div class="border-b border-gray-200 pb-4">
                 <h2 class="text-2xl font-bold text-gray-900">{{ $blog->tittle }}</h2>
                 <p class="text-gray-700 mt-2">{{ $blog->description }}</p>
-                <a href="{{ route('blog', $blog->id) }}" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
+                <p class="text-gray-500 mt-2">By {{ $blog->penulis }}</p>
+                <a href="{{ route('blogdetail', $blog->id) }}" class="text-blue-500 hover:underline mt-2 inline-block">Read More</a>
             </div>
         @endforeach
     @endif
